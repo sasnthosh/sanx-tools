@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2563eb">
+<title>SanX Tools — Free Everyday Tools</title>
+<meta name="description" content="Free, simple online tools: percentage calculator, word counter, to-do list and CGPA calculator.">
+<style>
+:root{--blue:#2563eb;--blue2:#60a5fa;--ink:#14213d;--muted:#64748b;--bg:#f4f7ff;--card:#fff;--line:#e5eaf4;--green:#16a34a;--shadow:0 14px 40px rgba(37,99,235,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:850;letter-spacing:-.5px}.logo{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;color:#fff;background:linear-gradient(135deg,var(--blue),#7c3aed);box-shadow:0 7px 16px #2563eb44}.brand span:last-child{color:var(--blue)}nav{display:flex;gap:8px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-size:.92rem;padding:9px 12px;border-radius:10px}nav a:hover{background:#eff6ff;color:var(--blue)}
+.hero{padding:62px 0 42px;background:radial-gradient(ellipse at 80% 0%,#dbeafe 0,transparent 45%),linear-gradient(180deg,#fff,#f4f7ff)}.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:32px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#1d4ed8;background:#dbeafe;border-radius:999px;padding:7px 12px;font-size:.82rem;font-weight:750}.hero h1{font-size:clamp(2.35rem,5vw,4.4rem);line-height:1.03;letter-spacing:-2.4px;margin:18px 0}.hero h1 em{font-style:normal;color:var(--blue)}.hero p{font-size:1.08rem;color:var(--muted);max-width:620px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:750;transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--blue);color:white;box-shadow:0 8px 18px #2563eb33}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}.hero-art{background:linear-gradient(145deg,#2563eb,#7c3aed);border-radius:28px;padding:25px;color:white;box-shadow:0 24px 50px #2563eb30;transform:rotate(1deg)}.art-top{display:flex;justify-content:space-between;align-items:center;font-weight:750}.dots{letter-spacing:3px;opacity:.75}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.mini{background:#ffffff20;border:1px solid #ffffff30;border-radius:16px;padding:16px}.mini strong{display:block;font-size:1.45rem}.mini small{opacity:.82}.hero-art .note{font-size:.82rem;opacity:.85;margin-top:18px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:38px 0 20px}.section-head h2{margin:0;font-size:1.75rem;letter-spacing:-.7px}.section-head p{margin:5px 0 0;color:var(--muted)}.pill{font-size:.78rem;color:#1d4ed8;background:#dbeafe;border-radius:999px;padding:6px 10px;font-weight:750}
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding-bottom:50px}.tool-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);scroll-margin-top:95px}.tool-title{display:flex;gap:13px;align-items:center;margin-bottom:18px}.tool-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#eff6ff;font-size:1.45rem}.tool-title h3{margin:0;font-size:1.18rem}.tool-title p{margin:3px 0 0;color:var(--muted);font-size:.9rem}.field{display:flex;flex-direction:column;gap:6px;margin:13px 0}.field label{font-size:.9rem;font-weight:700}.field input,.field textarea,.field select{width:100%;padding:11px 12px;border:1px solid #d8e0ee;border-radius:11px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2563eb18}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.result{margin-top:14px;padding:13px 15px;border-radius:12px;background:#eff6ff;color:#1e40af;font-weight:750;min-height:48px;overflow-wrap:anywhere}.hint{font-size:.82rem;color:var(--muted);margin:9px 0 0}.tool-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.tool-actions .btn{padding:10px 13px}.counter-row{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.84rem;margin-top:8px}
+.todo-add{display:flex;gap:8px}.todo-add input{min-width:0;flex:1;padding:11px 12px;border:1px solid #d8e0ee;border-radius:11px}.todo-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}.todo-item{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:12px}.todo-item input{accent-color:var(--blue);width:17px;height:17px}.todo-item span{flex:1;overflow-wrap:anywhere}.todo-item.done span{text-decoration:line-through;color:#94a3b8}.delete{border:0;background:#fee2e2;color:#b91c1c;border-radius:8px;padding:6px 9px;font-weight:750}.empty{color:var(--muted);text-align:center;padding:20px 8px;border:1px dashed #cbd5e1;border-radius:12px;margin-top:12px}
+footer{background:#101b35;color:#cbd5e1;padding:28px 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.foot strong{color:#fff}.foot p{margin:4px 0;font-size:.88rem}.toplink{color:#bfdbfe;text-decoration:none}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#14213d;color:#fff;padding:11px 16px;border-radius:12px;box-shadow:var(--shadow);transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){.hero{padding:42px 0 25px}.hero-grid{grid-template-columns:1fr}.hero-art{max-width:460px}.tools{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.nav{padding:12px 0;align-items:flex-start;flex-direction:column;gap:8px}nav{gap:2px}nav a{padding:7px 9px}.hero h1{letter-spacing:-1.5px}.tool-card{padding:19px}}
+@media(max-width:420px){.two{grid-template-columns:1fr}.todo-add{flex-direction:column}.hero-buttons .btn{width:100%}.mini{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="SanX Tools home" style="text-decoration:none;color:inherit"><span class="logo">SX</span><span>SanX <span>Tools</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#percentage">Percentage</a><a href="#wordcounter">Word Counter</a><a href="#todo">To-do List</a><a href="#cgpa">CGPA</a>
+    </nav>
+  </div>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">✦ FREE EVERYDAY TOOLS</span>
+        <h1>Small tools.<br><em>Big help.</em></h1>
+        <p>Useful, simple tools for students and everyday life — all in one place. No sign-up needed.</p>
+        <div class="hero-buttons"><a class="btn primary" href="#tools" style="text-decoration:none">Explore tools ↓</a><a class="btn secondary" href="#about" style="text-decoration:none">About SanX Tools</a></div>
+      </div>
+      <div class="hero-art" aria-label="Tools dashboard preview">
+        <div class="art-top"><span>✦ Your daily toolkit</span><span class="dots">•••</span></div>
+        <div class="mini-grid">
+          <div class="mini"><strong>％</strong><small>Percentage</small></div>
+          <div class="mini"><strong>Abc</strong><small>Word Counter</small></div>
+          <div class="mini"><strong>✓</strong><small>To-do List</small></div>
+          <div class="mini"><strong>🎓</strong><small>CGPA Helper</small></div>
+        </div>
+        <div class="note">Simple • Fast • Free to use</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="tools">
+    <div class="section-head"><div><h2>Your everyday tools</h2><p>Choose a tool and get things done in seconds.</p></div><span class="pill">4 TOOLS · FREE</span></div>
+    <div class="tools">
+      <article class="tool-card" id="percentage">
+        <div class="tool-title"><div class="tool-icon">％</div><div><h3>Percentage Calculator</h3><p>Calculate marks and percentages.</p></div></div>
+        <div class="two">
+          <div class="field"><label for="obtained">Marks obtained</label><input id="obtained" type="number" min="0" step="any" placeholder="e.g. 420"></div>
+          <div class="field"><label for="total">Total marks</label><input id="total" type="number" min="0.0001" step="any" placeholder="e.g. 500"></div>
+        </div>
+        <button class="btn primary" id="calcPercent">Calculate percentage</button>
+        <div class="result" id="percentResult" aria-live="polite">Your result will appear here.</div>
+        <p class="hint">Formula: (Marks obtained ÷ Total marks) × 100</p>
+      </article>
+
+      <article class="tool-card" id="wordcounter">
+        <div class="tool-title"><div class="tool-icon">Abc</div><div><h3>Word Counter</h3><p>Count words, characters and sentences.</p></div></div>
+        <div class="field"><label for="textInput">Paste or type your text</label><textarea id="textInput" rows="5" placeholder="Start typing here..."></textarea></div>
+        <div class="counter-row"><span id="wordCount">0 words</span><span id="charCount">0 characters</span><span id="sentenceCount">0 sentences</span></div>
+        <div class="tool-actions"><button class="btn secondary" id="copyText">Copy text</button><button class="btn secondary" id="clearText">Clear</button></div>
+      </article>
+
+      <article class="tool-card" id="todo">
+        <div class="tool-title"><div class="tool-icon">✓</div><div><h3>To-do List</h3><p>Plan your day and track tasks.</p></div></div>
+        <form id="todoForm" class="todo-add"><input id="todoInput" maxlength="180" placeholder="What do you need to do?" aria-label="New task"><button class="btn primary" type="submit">Add task</button></form>
+        <div class="counter-row"><span id="todoSummary">0 tasks</span><button class="delete" id="clearDone" type="button">Clear completed</button></div>
+        <ul class="todo-list" id="todoList" aria-live="polite"></ul>
+        <p class="hint">Tasks are saved in this browser on this device.</p>
+      </article>
+
+      <article class="tool-card" id="cgpa">
+        <div class="tool-title"><div class="tool-icon">🎓</div><div><h3>CGPA Helper</h3><p>Estimate percentage from CGPA.</p></div></div>
+        <div class="field"><label for="cgpaInput">Enter your CGPA</label><input id="cgpaInput" type="number" min="0" max="10" step="0.01" placeholder="e.g. 8.2"></div>
+        <div class="field"><label for="cgpaFormula">Conversion formula</label><select id="cgpaFormula"><option value="9.5">CGPA × 9.5 (common estimate)</option><option value="10">CGPA × 10</option></select></div>
+        <button class="btn primary" id="calcCgpa">Estimate percentage</button>
+        <div class="result" id="cgpaResult" aria-live="polite">Your estimate will appear here.</div>
+        <p class="hint">Important: colleges use different conversion rules. Check your university's official formula before using this result for applications.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="about" style="padding:0 0 52px">
+    <div class="tool-card" style="background:linear-gradient(120deg,#eff6ff,#fff)">
+      <div class="tool-title"><div class="tool-icon">✦</div><div><h3>About SanX Tools</h3><p>Made to keep everyday tasks simple.</p></div></div>
+      <p style="color:var(--muted);margin-bottom:0">SanX Tools is a beginner-friendly utility website project by Santhosh. The tools run in your browser. Your text and tasks are not sent to a server by this demo.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong>SanX Tools</strong><p>Simple tools for everyday life.</p></div><div><p>Made with care by Santhosh</p><a class="toplink" href="#home">Back to top ↑</a></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+let toastTimer;
+function toast(message){const t=$('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2200);}
+
+// Percentage calculator
+$('calcPercent').addEventListener('click',()=>{
+  const obtained=Number($('obtained').value), total=Number($('total').value);
+  if($('obtained').value.trim()===''||$('total').value.trim()===''||!Number.isFinite(obtained)||!Number.isFinite(total)||obtained<0||total<=0){
+    $('percentResult').textContent='Enter valid marks. Total marks must be greater than 0.';return;
+  }
+  if(obtained>total){$('percentResult').textContent='Marks obtained cannot be greater than total marks.';return;}
+  $('percentResult').textContent=`Percentage: ${(obtained/total*100).toFixed(2)}%`;
+});
+
+// Word counter
+function updateWordCount(){
+  const text=$('textInput').value;
+  const trimmed=text.trim();
+  const words=trimmed ? trimmed.split(/\s+/u).length : 0;
+  const sentences=(text.match(/[.!?]+(?=\s|$)/g)||[]).length;
+  $('wordCount').textContent=`${words} ${words===1?'word':'words'}`;
+  $('charCount').textContent=`${text.length} ${text.length===1?'character':'characters'}`;
+  $('sentenceCount').textContent=`${sentences} ${sentences===1?'sentence':'sentences'}`;
+}
+$('textInput').addEventListener('input',updateWordCount);
+$('clearText').addEventListener('click',()=>{$('textInput').value='';updateWordCount();toast('Text cleared');});
+$('copyText').addEventListener('click',async()=>{
+  const value=$('textInput').value;
+  if(!value){toast('Type some text first');return;}
+  try{await navigator.clipboard.writeText(value);toast('Text copied');}
+  catch(e){$('textInput').select();try{document.execCommand('copy');toast('Text copied');}catch(_){toast('Copy not available in this browser');}}
+});
+
+// To-do list with localStorage and safe text rendering
+const STORAGE_KEY='sanx-tools-todos-v1';
+let todos=[];
+try{const saved=localStorage.getItem(STORAGE_KEY);todos=saved?JSON.parse(saved):[];if(!Array.isArray(todos))todos=[];}catch(e){todos=[];}
+function saveTodos(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(todos));}catch(e){toast('Browser storage is unavailable; tasks may not persist');}}
+function renderTodos(){
+  const list=$('todoList');list.replaceChildren();
+  const done=todos.filter(t=>t.done).length;
+  $('todoSummary').textContent=`${todos.length} task${todos.length===1?'':'s'} · ${done} completed`;
+  if(!todos.length){const empty=document.createElement('li');empty.className='empty';empty.textContent='No tasks yet. Add your first task above!';list.appendChild(empty);return;}
+  todos.forEach(task=>{
+    const li=document.createElement('li');li.className='todo-item'+(task.done?' done':'');
+    const check=document.createElement('input');check.type='checkbox';check.checked=task.done;check.setAttribute('aria-label','Mark task complete');
+    check.addEventListener('change',()=>{task.done=check.checked;saveTodos();renderTodos();});
+    const span=document.createElement('span');span.textContent=task.text;
+    const del=document.createElement('button');del.type='button';del.className='delete';del.textContent='Delete';del.setAttribute('aria-label','Delete task');
+    del.addEventListener('click',()=>{todos=todos.filter(t=>t.id!==task.id);saveTodos();renderTodos();});
+    li.append(check,span,del);list.appendChild(li);
+  });
+}
+$('todoForm').addEventListener('submit',e=>{
+  e.preventDefault();const text=$('todoInput').value.trim();if(!text){toast('Please enter a task');return;}
+  todos.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),text,done:false});
+  saveTodos();renderTodos();$('todoInput').value='';$('todoInput').focus();
+});
+$('clearDone').addEventListener('click',()=>{todos=todos.filter(t=>!t.done);saveTodos();renderTodos();toast('Completed tasks cleared');});
+renderTodos();
+
+// CGPA estimate
+$('calcCgpa').addEventListener('click',()=>{
+  const raw=$('cgpaInput').value;
+  const cgpa=Number(raw), factor=Number($('cgpaFormula').value);
+  if(raw.trim()===''||!Number.isFinite(cgpa)||cgpa<0||cgpa>10){$('cgpaResult').textContent='Enter a CGPA between 0 and 10.';return;}
+  const pct=cgpa*factor;
+  $('cgpaResult').textContent=`Estimated percentage: ${pct.toFixed(2)}%${pct>100?' (over 100%; check your university formula)':''}`;
+});
+</script>
+</body>
+</html>
